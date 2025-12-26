@@ -104,14 +104,14 @@ class CSSString extends PrimitiveValue
 
         $matches[] = $quote === '"' ? 0x22 : 0x27;
 
-        $length = strlen($str);
+        $length = \strlen($str);
         $output = '';
         $previous = 0x0;
 
         for ($i = 0; $i < $length; ++$i) {
-            $current = ord($str[$i]);
+            $current = \ord($str[$i]);
 
-            if (in_array($current, $matches, true) && $previous !== 0x5c) {
+            if (\in_array($current, $matches, true) && $previous !== 0x5c) {
                 $output .= '\\';
             }
 
