@@ -388,6 +388,6 @@ class Color extends CSSFunction
             $arguments = $formatter->implode($separator, [$arguments, $alpha]);
         }
 
-        return $this->getName() . '(' . $arguments . ')';
+        return str_replace('rgba', 'rgb', $this->getName()) . '(' . $arguments . ')';
     }
 }
